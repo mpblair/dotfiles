@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-Wherein I place my idiosyncrasies for the world to see
+Wherein I place my idiosyncrasies for the world to see.
