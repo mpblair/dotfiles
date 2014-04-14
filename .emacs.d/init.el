@@ -27,6 +27,8 @@
 (setq inhibit-startup-message t)
 (setq inhibit-splash-screen t)
 
+(when window-system (set-frame-size (selected-frame) 100 50))
+
 (require 'ido)
 (ido-mode t)
 
