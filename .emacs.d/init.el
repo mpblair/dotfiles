@@ -8,15 +8,17 @@
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/"))
 
+(package-initialize)
+
 (when (null package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages '(clojure-mode
-		      zenburn-theme))
+(setq my-packages '(clojure-mode magit
+		    paredit zenburn-theme))
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(dolist (package my-packages)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -28,5 +30,4 @@
 (require 'ido)
 (ido-mode t)
 
-(when (not (require 'zenburn-theme nil t))
-  (require 'zenburn-theme))
+(require 'zenburn-theme)
