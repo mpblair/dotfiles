@@ -1,3 +1,5 @@
+(add-to-list 'load-path "~/.emacs.d")
+
 ;; make emacs init.el compatible with 23
 (when (not (require 'package nil t))
   (require 'package "package-23.el"))
@@ -9,8 +11,7 @@
 (when (null package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages '(ido
-		      clojure-mode
+(defvar my-packages '(clojure-mode
 		      zenburn-theme))
 
 (dolist (p my-packages)
@@ -27,4 +28,5 @@
 (require 'ido)
 (ido-mode t)
 
-(load-theme 'zenburn t)
+(when (not (require 'zenburn-theme nil t))
+  (require 'zenburn-theme))
