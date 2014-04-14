@@ -1,8 +1,13 @@
-(require 'package)
+;; make emacs init.el compatible with 23
+(when (not (require 'package nil t))
+  (require 'package "package-23.el"))
+
+(package-initialize)
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)
-(package-refresh-contents)
+
+(when (null package-archive-contents)
+  (package-refresh-contents))
 
 (defvar my-packages '(ido
 		      clojure-mode
