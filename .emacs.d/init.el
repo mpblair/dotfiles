@@ -1,6 +1,10 @@
+;; this seems to only be required for 23
+;; and only because of package-23.el
 (add-to-list 'load-path "~/.emacs.d")
 
-;; make emacs init.el compatible with 23
+;; Packages
+
+;; load in package if 23
 (when (not (require 'package nil t))
   (require 'package "package-23.el"))
 
@@ -20,6 +24,7 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+;; Preferences
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
