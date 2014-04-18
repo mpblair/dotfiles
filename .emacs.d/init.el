@@ -13,8 +13,12 @@
 (when (null package-archive-contents)
   (package-refresh-contents))
 
-(setq my-packages '(clojure-mode magit
-		    paredit zenburn-theme))
+(setq my-packages '( magit          ;; git
+		     paredit        
+		     clojure-mode
+		     cider          ;; clojure stuff
+		     groovy-mode    ;; groovy stuff
+		     zenburn-theme))
 
 (dolist (package my-packages)
   (unless (package-installed-p package)
@@ -26,6 +30,12 @@
 (global-linum-mode 1)
 (setq inhibit-startup-message t)
 (setq inhibit-splash-screen t)
+
+;; put backup files in tmp directory
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (when window-system (set-frame-size (selected-frame) 100 50))
 
