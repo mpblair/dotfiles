@@ -19,6 +19,7 @@
 
 (setq my-packages '( magit          ;; git
 		     paredit        
+		     rainbow-delimiters
 		     clojure-mode
 		     cider          ;; clojure stuff
 		     groovy-mode    ;; groovy stuff
