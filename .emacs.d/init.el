@@ -49,3 +49,5 @@
 (ido-mode t)
 
 (require 'zenburn-theme)
+
+(set-frame-font "-unknown-Liberation Mono-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
