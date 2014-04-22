@@ -23,6 +23,7 @@
 		     clojure-mode
 		     cider          ;; clojure stuff
 		     groovy-mode    ;; groovy stuff
+		     ruby-mode      ;; ruby stuff
 		     zenburn-theme))
 
 (dolist (package my-packages)
