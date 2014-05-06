@@ -40,6 +40,9 @@
 (setq inhibit-startup-message t)
 (setq inhibit-splash-screen t)
 
+(setq-default fill-column 80)
+
+
 ;; put backup files in tmp directory
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
