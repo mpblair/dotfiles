@@ -50,5 +50,6 @@
 (ido-mode t)
 
 (require 'zenburn-theme)
+(global-rainbow-delimiters-mode)
 
 (set-frame-font "-unknown-Liberation Mono-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
