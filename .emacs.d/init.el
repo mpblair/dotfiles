@@ -1,3 +1,4 @@
+
 ;; this seems to only be required for 23
 ;; and only because of package-23.el
 (add-to-list 'load-path "~/.emacs.d")
@@ -18,6 +19,7 @@
   (package-refresh-contents))
 
 (setq my-packages '( magit          ;; git
+		     fill-column-indicator
 		     paredit        
 		     rainbow-delimiters
 		     clojure-mode
@@ -50,6 +52,14 @@
 (ido-mode t)
 
 (require 'zenburn-theme)
-(global-rainbow-delimiters-mode)
+
+(global-rainbow-delimiters-mode 1)
+
+(require 'fill-column-indicator)
+(define-globalized-minor-mode global-fci-mode
+  fci-mode (lambda () (fci-mode 1)))
+(setq fci-rule-color "yellow")
+(global-fci-mode 1)
+
 
 (set-frame-font "-unknown-Liberation Mono-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
