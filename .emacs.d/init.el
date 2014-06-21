@@ -11,7 +11,11 @@
 
 (package-initialize)
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(when (< emacs-major-version 24)
+  (add-to-list 'package-archives
+	       '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (package-initialize)
 
@@ -23,10 +27,10 @@
 		     paredit        
 		     rainbow-delimiters
 		     clojure-mode
-		     cider          ;; clojure stuff
 		     groovy-mode    ;; groovy stuff
-		     ruby-mode      ;; ruby stuff
-		     zenburn-theme))
+		     enh-ruby-mode      ;; ruby stuff
+		     zenburn-theme
+))
 
 (dolist (package my-packages)
   (unless (package-installed-p package)
