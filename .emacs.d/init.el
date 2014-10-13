@@ -30,6 +30,7 @@
 		     groovy-mode    ;; groovy stuff
 		     enh-ruby-mode      ;; ruby stuff
 		     zenburn-theme
+		     markdown-mode
 ))
 
 (dolist (package my-packages)
